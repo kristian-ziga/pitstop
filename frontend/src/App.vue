@@ -1,18 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <h1>HELOOOOOOOOOOOO</h1>
+    <div class="image-container">
+      <img class="image" src="@/assets/logo_image.png" alt="Website Logo">
+    </div>
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+      <nav class="menu" style="margin-left: 5px;">
+        <RouterLink to="/">Kto sme</RouterLink>
+        <RouterLink to="/about">Hodnotenia</RouterLink>
+        <RouterLink to="/test">Kontakt</RouterLink>
       </nav>
     </div>
   </header>
@@ -26,10 +26,38 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.image-container {
+  position: absolute;         /* Positions the container of the image absolutely within the header */
+  top: 50px;                     /* Aligns it to the top */
+  left: 135px;                    /* Aligns it to the left */
+  z-index: 10;                /* Ensures the image stays above other content */
 }
+
+.image {
+  display: block;
+  margin: 0;
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.menu {
+  width: 100%;
+
+  font-size: 60px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.menu a {
+  /* Assuming your menu items are anchor tags */
+  margin: 20px 0;            /* Increase the space between menu items (up/down direction) */
+  text-decoration: none;     /* Remove underline from links */
+}
+
 
 nav {
   width: 100%;

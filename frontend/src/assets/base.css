@@ -10,12 +10,20 @@
 
   --vt-c-indigo: #2c3e50;
 
+  --vt-c-divider-pastel-blue-1: rgba(173, 216, 230, 0.29); /* Light Pastel Blue */
+  --vt-c-divider-pastel-blue-2: rgba(176, 224, 230, 0.29); /* Powder Blue */
+  --vt-c-divider-pastel-blue-3: rgba(191, 239, 255, 0.29); /* Baby Blue */
+  --vt-c-divider-pastel-blue-4: rgba(202, 225, 255, 0.29); /* Pastel Sky Blue */
+  --vt-c-divider-pastel-blue-5: rgba(179, 229, 252, 0.29); /* Light Aqua Blue */
+  --vt-c-divider-dark-blue-1: #25455d; /* Pastel Cyan */
+
+
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-1: var(--vt-c-white-soft);
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
@@ -23,12 +31,12 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
+  --color-background: var(--vt-c-divider-dark-blue-1);
+  --color-background-soft: var(--vt-c-divider-pastel-blue-1);
   --color-background-mute: var(--vt-c-white-mute);
 
   --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-border-hover: var(--vt-c-divider-pastel-blue-2);
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
