@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="image-container">
-      <img class="image" src="@/assets/logo_image.png" alt="Website Logo">
+      <img class="image" src="@/assets/new_logo.png" alt="Website Logo">
     </div>
     <div class="wrapper">
       <nav class="menu" style="margin-left: 5px;">
@@ -28,11 +28,11 @@ header {
 
 .image-container {
   position: absolute;
-  top: 40px;
-  left: 135px;
+  top: 20px;
+  left: 50px;
   z-index: 10;
-  width: 350px;
-  height: 200px;
+  width: 400px;
+  height: 130px;
 }
 
 .image {
@@ -45,21 +45,21 @@ header {
 
 .menu {
   position: fixed;
-  top: 280px;
-  left: 130px;
-  width: 30%;
-  float: left;
-  font-size: 60px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  background-color: #E5D0AC;
+  font-size: 40px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu a {
 
-  margin: 20px 0;
+  margin: 20px 15px;
   text-decoration: none;
 }
 
@@ -68,11 +68,11 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: #85144B;
+  font-weight: bold;
 }
 
 nav a.router-link-exact-active:hover {

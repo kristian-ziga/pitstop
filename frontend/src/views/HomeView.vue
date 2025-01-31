@@ -1,15 +1,13 @@
-<script setup>
 
-</script>
 
 <template>
-  <main>
+  <main class="intro-txt">
     <section class="intro">
       <h1>Vitajte u NÁS!</h1>
       <p>Vaši dôveryhodní odborníci na opravu a údržbu áut</p>
     </section>
 
-    <section class="service">
+    <section class="our-services">
       <h2>Naše služby</h2>
       <ul>
         <li>Diagnostika a oprava motora</li>
@@ -21,7 +19,7 @@
       </ul>
     </section>
 
-    <section class="why_us">
+    <section class="why-us">
       <h2>Prečo si vybrať nás?</h2>
       <p>Máme viac ako 10 rokov skúseností a garantujeme odovzdanie vozidla v perfektnom stave. Naši odborníci používajú najnovšie nástroje a kvalitné náhradné diely.</p>
       <ul>
@@ -37,8 +35,5 @@
 <style scoped>
 .intro {
   font-size: 37px;
-
-
 }
-
 </style>

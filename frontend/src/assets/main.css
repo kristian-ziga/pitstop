@@ -10,7 +10,7 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(192, 100%, 75%, 1);
+  color: #574964;
   transition: 0.4s;
   padding: 3px;
 }

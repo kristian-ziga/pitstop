@@ -87,20 +87,19 @@ fetchData();
     <br>
     <br>
 
-    <div class="show-reviews">
-      <h2>Existing Reviews</h2>
-      <div v-if="reviews.length > 0">
-        <ul>
-          <li v-for="review in reviews" :key="review.reviewID">
-            <strong>{{ review.name }} {{ review.score }}:</strong> {{ review.description }}
-          </li>
-        </ul>
-      </div>
-      <div v-else>
-        <p>No reviews yet.</p>
-      </div>
+  </div>
+  <div class="show-reviews">
+    <h2>Existing Reviews</h2>
+    <div v-if="reviews.length > 0">
+      <ul>
+        <li v-for="review in reviews" :key="review.reviewID">
+          <strong>{{ review.name }} {{ review.score }}:</strong> {{ review.description }}
+        </li>
+      </ul>
     </div>
-
+    <div v-else>
+      <p>No reviews yet.</p>
+    </div>
   </div>
 
 </template>
@@ -109,6 +108,10 @@ fetchData();
 
 .input-window {
   margin-bottom: 16px;
+}
+
+.show-reviews{
+  top: 180px;
 }
 
 input {
@@ -146,9 +149,9 @@ button + p {
 
 .about {
   position: fixed;
-  top: 30px;
-  right: 0;
-  width: 50%;
+  top: 180px;
+  left: 0;
+  width: 40%;
 
   z-index: 1000;
   padding: 10px;
