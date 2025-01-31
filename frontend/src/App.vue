@@ -27,23 +27,28 @@ header {
 }
 
 .image-container {
-  position: absolute;         /* Positions the container of the image absolutely within the header */
-  top: 50px;                     /* Aligns it to the top */
-  left: 135px;                    /* Aligns it to the left */
-  z-index: 10;                /* Ensures the image stays above other content */
+  position: absolute;
+  top: 40px;
+  left: 135px;
+  z-index: 10;
+  width: 350px;
+  height: 200px;
 }
 
 .image {
   display: block;
   margin: 0;
-  width: 40%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
 }
 
 .menu {
-  width: 100%;
-
+  position: fixed;
+  top: 280px;
+  left: 130px;
+  width: 30%;
+  float: left;
   font-size: 60px;
   text-align: left;
   display: flex;
@@ -53,9 +58,9 @@ header {
 }
 
 .menu a {
-  /* Assuming your menu items are anchor tags */
-  margin: 20px 0;            /* Increase the space between menu items (up/down direction) */
-  text-decoration: none;     /* Remove underline from links */
+
+  margin: 20px 0;
+  text-decoration: none;
 }
 
 
@@ -74,40 +79,6 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
 
-nav a:first-of-type {
-  border: 0;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

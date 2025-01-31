@@ -32,15 +32,9 @@ fetchData();
 
 <template>
   <div>
-    <h1>Test View</h1>
-    <p>{{ output }}</p>
-    <br>
-    <input v-model="inputData" />
-    <button @click="postData">Post Data</button>
-
     <br>
     <h2>Kontakt:</h2>
-    <p><a href="tel:+421911421521">0911 421 521</a></p>
+    <p><a href="tel:+421911421521">+421 911 421 521</a></p>
 
     <a :href="'mailto:' + 'jozko.mrkvicka@email.com'">jozko.mrkvicka@email.com</a>
     <br>

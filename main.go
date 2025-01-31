@@ -12,7 +12,7 @@ func main() {
 	println("Starting service...")
 	db, err := CreateDB()
 	if err != nil {
-		panic("failed to open database:")
+		log.Fatalf("Failed to connect to the database: %v", err)
 	}
 	println("DB ok...")
 
