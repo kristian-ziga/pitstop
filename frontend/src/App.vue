@@ -22,12 +22,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  position: fixed;
+
 }
 
 .image-container {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 50px;
   z-index: 10;
@@ -46,7 +46,7 @@ header {
 .menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -5px;
   width: 100%;
   height: 170px;
   background-color: #E5D0AC;
@@ -58,8 +58,9 @@ header {
 }
 
 .menu a {
-
-  margin: 20px 15px;
+  position: relative;
+  left: 70px;
+  margin: 30px 25px;
   text-decoration: none;
 }
 
@@ -77,6 +78,8 @@ nav a.router-link-exact-active {
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
+  border-radius: 20px !important;
+
 }
 
 

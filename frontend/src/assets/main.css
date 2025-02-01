@@ -1,4 +1,5 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet');
 
 #app {
   max-width: 1280px;
@@ -25,8 +26,14 @@ a,
   body {
     display: flex;
     place-items: center;
+    font-family: quicksand, sans-serif;
   }
-
+  .quicksand-<uniquifier> {
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -75,25 +75,28 @@ fetchData();
     <div class="input-window">
       <label for="description">Popis:</label>
       <br>
-      <input id="description" v-model="description" type="text" />
+      <textarea class="description-input" id="description" v-model="description" type="text"></textarea>
     </div>
 
     <button @click="postData">Poslať</button>
-
-
     <p v-if="errorMsg" style="color: red;">{{ errorMsg }}</p>
-    <p v-if="successMsg" style="color: green;">{{ successMsg }}</p>
-
-    <br>
-    <br>
-
+    <p v-if="successMsg" style="color: #80ed99;">{{ successMsg }}</p>
   </div>
+
+
   <div class="show-reviews">
-    <h2>Existing Reviews</h2>
+    <h1>Existing Reviews</h1>
+    <hr class="first-line">
+
     <div v-if="reviews.length > 0">
-      <ul>
+      <ul class="review-list">
         <li v-for="review in reviews" :key="review.reviewID">
-          <strong>{{ review.name }} {{ review.score }}:</strong> {{ review.description }}
+          <strong>
+            {{ review.name }}: {{ review.score }}
+          </strong>
+          <span v-if="review.description"></span>
+          <span class="descript" v-if="review.description">{{ review.description }}</span>
+          <hr class="custom-line">
         </li>
       </ul>
     </div>
@@ -106,24 +109,81 @@ fetchData();
 
 <style scoped>
 
+.first-line {
+  border: none;
+  height: 3px;
+  background-color: #5f0f40;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.custom-line {
+  border: none;
+  height: 2px;
+  background-color: #5f0f40;
+  width: 100%;
+  margin: 10px auto;
+}
+
+h1 {
+  font-weight: 700;
+}
+strong  {
+  font-size: 25px;
+  color: #240046;
+  background-color: #e6ccb2;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 10px;
+}
+
 .input-window {
   margin-bottom: 16px;
 }
 
+.review-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-list li {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 .show-reviews{
-  top: 180px;
+  position: fixed;
+  color: #5f0f40;
+  border-radius: 20px;
+  padding: 15px;
+  width: 50%;
+  height: 620px;
+  background-color: white;
+  top: 200px;
+  right: 120px;
+  overflow-y: auto;
 }
 
 input {
   padding: 8px;
   margin-top: 4px;
-  width: 70%;
-  border-radius: 8px;
+  width: 80%;
+  border-radius: 15px;
+}
+
+textarea {
+  padding: 8px;
+  margin-top: 4px;
+  height: 200px;
+  width: 80%;
+  border-radius: 15px;
 }
 
 span {
-  font-size: 15px;
-  margin-left: 5px;
+  font-size: 20px;
+  margin-left: 15px;
+  display: block;
 }
 
 .filled input:invalid {
@@ -134,14 +194,20 @@ span {
 
 button {
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #f2cc8f;
+  color: #5f0f40;
+  font-weight: 1000;
   border: none;
   cursor: pointer;
-  margin-top: 16px;
-  border-radius: 8px;
+  margin-top: 10px;
+  border-radius: 15px;
+  font-size: 17px;
+  height: 40px;
+  width: 100px;
 }
-
+button:hover {
+  background-color: #ddb892;
+}
 
 button + p {
   margin-top: 16px;
@@ -150,7 +216,7 @@ button + p {
 .about {
   position: fixed;
   top: 180px;
-  left: 0;
+  left: 20px;
   width: 40%;
 
   z-index: 1000;
