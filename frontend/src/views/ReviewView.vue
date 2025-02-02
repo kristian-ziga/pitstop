@@ -11,14 +11,30 @@ const successMsg = ref(0);
 const isSubmitted = ref(false);
 const reviews = ref([])
 
+const avg_score = ref(0.0)
+
+
 async function fetchData() {
   try {
     const response = await axios.get('http://localhost:8000/review');
     console.log(response.data);
     console.log('Fetched reviews:', response.data);
     reviews.value = response.data;
+    calculateAvgScore();
   } catch (error) {
     console.error('Error fetching data:', error);
+  }
+}
+
+function calculateAvgScore() {
+  if (reviews.value.length > 0) {
+    let totalScore = 0;
+    for (let i = 0; i < reviews.value.length; i++) {
+      totalScore += reviews.value[i].score;
+    }
+    avg_score.value = (totalScore / reviews.value.length).toFixed(1);
+  } else {
+    avg_score.value = 0;
   }
 }
 
@@ -85,7 +101,7 @@ fetchData();
 
 
   <div class="show-reviews">
-    <h1>Existing Reviews</h1>
+    <h1>Existing Reviews: {{ avg_score }}</h1>
     <hr class="first-line">
 
     <div v-if="reviews.length > 0">
@@ -184,6 +200,7 @@ span {
   font-size: 20px;
   margin-left: 15px;
   display: block;
+  font-weight: 600;
 }
 
 .filled input:invalid {

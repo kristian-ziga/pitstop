@@ -2,12 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/google/uuid"
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/google/uuid"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
 type Review struct {
@@ -42,7 +43,6 @@ func GetReviews(db *gorm.DB) http.HandlerFunc {
 		var reviews []Review
 		db.Find(&reviews)
 		_ = json.NewEncoder(w).Encode(reviews)
-
 	}
 }
 
@@ -89,6 +89,5 @@ func ReviewAdd(db *gorm.DB) http.HandlerFunc {
 			"reviewId": review.ReviewID.String(),
 		}
 		_ = json.NewEncoder(w).Encode(response)
-
 	}
 }
