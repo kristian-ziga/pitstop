@@ -94,7 +94,7 @@ fetchData();
 
 
   <div class="show-reviews">
-    <h1>Existing Reviews: {{ avg_score }}</h1>
+    <h1>Recenzie: {{ avg_score }}</h1>
     <hr class="first-line">
 
     <div v-if="reviews.length > 0">
