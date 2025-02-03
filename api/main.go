@@ -10,19 +10,14 @@ import (
 )
 
 func main() {
-	println("Starting service...")
 	db, err := CreateDB()
 	if err != nil {
 		log.Fatalf("Failed to connect to the database: %v", err)
 	}
-	println("DB ok...")
 
 	r := mux.NewRouter()
 
-	println("Router ok...")
-
 	CreateApi(db, r)
-	println("API ok...")
 
 	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With", "XMLHttpRequest", "Content-Type"})
 	originsOk := handlers.AllowedOrigins([]string{"*"})

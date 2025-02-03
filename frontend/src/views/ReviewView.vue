@@ -6,7 +6,6 @@ const output = ref('');
 const name = ref('');
 const description = ref('');
 const score = ref(0);
-const errorMsg = ref(0);
 const successMsg = ref(0);
 const isSubmitted = ref(false);
 const reviews = ref([])
@@ -40,7 +39,6 @@ function calculateAvgScore() {
 
 async function postData() {
   successMsg.value = '';
-  errorMsg.value = '';
   isSubmitted.value = true;
   if (!name.value || score.value === null || score.value < 1 || score.value >5) {
     return;
@@ -55,18 +53,14 @@ async function postData() {
 
     output.value = response.data.message;
     successMsg.value = 'Recenzia bola úspešne pridaná.';
-    errorMsg.value = '';
     fetchData();
   } catch (error) {
     successMsg.value = '';
     console.error('Error posting data:', error);
-    errorMsg.value = error.response.data.message;
   }
 }
 fetchData();
 </script>
-
-
 
 <template>
   <div class="about">
@@ -75,17 +69,17 @@ fetchData();
     <div class="input-window">
       <label for="name">Meno:</label>
       <br>
-      <input id="name" v-model="name" type="text"/>
+      <input id="name" v-model="name" type="text" :class="{ invalid: isSubmitted && !name }"/>
       <br>
-      <span v-if="isSubmitted && !name" style="color: red;">Zadajte meno.</span>
+      <span v-if="isSubmitted && !name" style="color: #E195AB;">Zadajte meno.</span>
     </div>
 
     <div class="input-window">
       <label for="score">Hodnotenie: (1-5)</label>
       <br>
-      <input id="score" v-model="score" type="number"/>
+      <input id="score" v-model="score" type="number" :class="{ invalid: isSubmitted && (score < 1 || score > 5 || !score) }"/>
       <br>
-      <span v-if="(score < 1 || score> 5 || !score) && isSubmitted" style="color: red;">Zadajte hodnotenie v rozmedzí 1-5.</span>
+      <span v-if="(score < 1 || score> 5 || !score) && isSubmitted" style="color: #E195AB;">Zadajte hodnotenie v rozmedzí 1-5.</span>
     </div>
 
     <div class="input-window">
@@ -95,7 +89,6 @@ fetchData();
     </div>
 
     <button @click="postData">Poslať</button>
-    <p v-if="errorMsg" style="color: red;">{{ errorMsg }}</p>
     <p v-if="successMsg" style="color: #80ed99;">{{ successMsg }}</p>
   </div>
 
@@ -203,11 +196,10 @@ span {
   font-weight: 600;
 }
 
-.filled input:invalid {
-  border: 2px solid red;
-  outline: 2px solid red;
+.invalid {
+  border: 1px solid #E195AB;
+  outline: 1px solid #E195AB;
 }
-
 
 button {
   padding: 10px 20px;
@@ -238,5 +230,9 @@ button + p {
 
   z-index: 1000;
   padding: 10px;
+}
+
+label {
+  font-weight: 500;
 }
 </style>

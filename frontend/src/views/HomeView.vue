@@ -1,5 +1,3 @@
-
-
 <template>
   <main>
     <section class="intro">
@@ -65,5 +63,3 @@ p {
   font-size: 20px;
 }
 </style>
-<script setup lang="ts">
-</script>

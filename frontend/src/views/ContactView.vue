@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="about">
     <h1>Kontaktný formulár</h1>
@@ -33,7 +31,6 @@
     <br>
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5216.374822106611!2d16.566499058423364!3d49.178030265998835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471295bf39ca282b%3A0xefba8968c501c195!2sFakultn%C3%A1%20nemocnica%20Brno!5e0!3m2!1ssk!2scz!4v1737492722089!5m2!1ssk!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
 
   </div>
 </template>
@@ -80,7 +77,6 @@ button {
   font-weight: 1000;
 }
 
-
 button + p {
   margin-top: 16px;
 }
@@ -94,6 +90,7 @@ button + p {
   z-index: 1000;
   padding: 10px;
 }
+
 .contact-info {
   right: 150px;
   position: fixed;
@@ -120,9 +117,11 @@ a {
 p {
   font-weight: 500;
 }
+
 iframe{
   height: 400px;
 }
+
 .link{
   color: #F7CFD8;
 }
